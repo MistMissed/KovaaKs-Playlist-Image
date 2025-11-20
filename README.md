@@ -1,6 +1,6 @@
 # KovaaKs Playlist Image
 Turns a KovaaKs playlist json file into a KovaaKs-style image which shows the entire playlist.
 
-In-game only about 7 scenario names can be shown at once and a scrollbar is added:
-
-This program displays the entire playlist in one image:
+In-Game Screenshot         | This Program
+:-------------------------:|:-------------------------:
+![](https://github.com/MistMissed/KovaaKs-Playlist-Image/blob/main/in-game.png) | ![](https://github.com/MistMissed/KovaaKs-Playlist-Image/blob/main/C%20-%20Wednesday%20-%20Smooth%20Tracking%20(INT)%20-%20LG56.png)
