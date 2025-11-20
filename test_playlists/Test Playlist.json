@@ -1,0 +1,19 @@
+{
+	"playlistName": "Test Playlist",
+	"playlistId": 0,
+	"authorSteamId": "",
+	"authorName": "",
+	"scenarioList": [
+		{
+			"scenario_name": "Smoothness Training 60 Close",
+			"play_Count": 1
+		}
+	],
+	"description": "",
+	"hasOfflineScenarios": false,
+	"hasEdited": true,
+	"shareCode": "",
+	"version": 31,
+	"updated": 0,
+	"isPrivate": false
+}

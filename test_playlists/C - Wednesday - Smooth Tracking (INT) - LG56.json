@@ -1,0 +1,83 @@
+{
+	"playlistName": "C - Wednesday - Smooth Tracking (INT) - LG56",
+	"playlistId": 85555,
+	"authorSteamId": "76561199038915548",
+	"authorName": "Lowgravity56",
+	"scenarioList": [
+		{
+			"scenario_name": "SYW (Smooth Your Wrist) FIXED",
+			"play_Count": 3
+		},
+		{
+			"scenario_name": "Centering II 180 no strafes",
+			"play_Count": 3
+		},
+		{
+			"scenario_name": "Smooth Thin Strafes Raspberry",
+			"play_Count": 3
+		},
+		{
+			"scenario_name": "tamTargetSwitch Control Hard",
+			"play_Count": 5
+		},
+		{
+			"scenario_name": "Extra Controlsphere Pure",
+			"play_Count": 4
+		},
+		{
+			"scenario_name": "tamTargetSwitch Smooth Hard",
+			"play_Count": 5
+		},
+		{
+			"scenario_name": "Extra Smoothsphere Pure",
+			"play_Count": 4
+		},
+		{
+			"scenario_name": "Smoothbot Pauer",
+			"play_Count": 3
+		},
+		{
+			"scenario_name": "VT Smoothbot Intermediate",
+			"play_Count": 5
+		},
+		{
+			"scenario_name": "GliderSphere Intermediate LG56",
+			"play_Count": 4
+		},
+		{
+			"scenario_name": "B360TI Small Sparky",
+			"play_Count": 4
+		},
+		{
+			"scenario_name": "vertical smoothness training popcorn small",
+			"play_Count": 3
+		},
+		{
+			"scenario_name": "PGTI Voltaic Easy",
+			"play_Count": 2
+		},
+		{
+			"scenario_name": "VT PreciseOrb Advanced Extra Small 30% Slower",
+			"play_Count": 3
+		},
+		{
+			"scenario_name": "PGTI Voltaic UFO",
+			"play_Count": 3
+		},
+		{
+			"scenario_name": "VT PreciseOrb Advanced Extra Small",
+			"play_Count": 4
+		},
+		{
+			"scenario_name": "VT PreciseOrb Intermediate",
+			"play_Count": 5
+		}
+	],
+	"description": "Smooth Intermediate Playlist.\r\nRecommended FOV: 103\r\nRecommended sens: 20 - 55cm/360\r\n\r\nSpecial thanks to MattyOW, TenguTerror, RiddBTW, WestProter and SilkyCrisp for their feedback and inspiration.\r\n\r\nHappy grinding!\r\n- Lowgravity56",
+	"hasOfflineScenarios": false,
+	"hasEdited": false,
+	"shareCode": "KovaaKsAscendingTurquoiseTacmap",
+	"version": 31,
+	"updated": 1682026127,
+	"isPrivate": false
+}
