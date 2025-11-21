@@ -1,6 +1,5 @@
 import json
 from dataclasses import dataclass
-
 from scenario import Scenario
 
 @dataclass

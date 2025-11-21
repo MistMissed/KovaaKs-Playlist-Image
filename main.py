@@ -1,12 +1,27 @@
 import sys
+import os
 from PIL import Image, ImageDraw, ImageFont
 from playlist import Playlist
 
 
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
+
+
+roboto_bold_path =       resource_path("fonts\\Roboto-Bold.ttf")
+roboto_extra_bold_path = resource_path("fonts\\Roboto-ExtraBold.ttf")
+roboto_regular_path =    resource_path("fonts\\Roboto-Regular.ttf")
+
 def create_image(playlist: Playlist, outfile: str):
     sharecode_shrink = 0
     if not playlist.share_code.isalpha():
-        print("no_sharecode")
         sharecode_shrink = 45
 
     # Window
@@ -20,15 +35,15 @@ def create_image(playlist: Playlist, outfile: str):
 
     playlist_text_color = (154,157,176)
     playlist_text_outline_color = (93,93,94)
-    playlist_text_font = ImageFont.truetype("fonts/Roboto-Bold.ttf", 30)
+    playlist_text_font = ImageFont.truetype(roboto_bold_path, 30)
 
     # Playlist Name Text
     playlist_name_outline_color = (125,123,127)
-    playlist_text_font = ImageFont.truetype("fonts/Roboto-ExtraBold.ttf", 35)
+    playlist_text_font = ImageFont.truetype(roboto_extra_bold_path, 35)
 
     # ShareCode area
-    sharecode_text_font = ImageFont.truetype("fonts/Roboto-Regular.ttf", 22)
-    sharecode_font = ImageFont.truetype("fonts/Roboto-ExtraBold.ttf", 23)
+    sharecode_text_font = ImageFont.truetype(roboto_regular_path, 22)
+    sharecode_font = ImageFont.truetype(roboto_extra_bold_path, 23)
     green_box_color = (105,128,97)
     green_box_outline_color = (96,104,83)
 
@@ -37,10 +52,10 @@ def create_image(playlist: Playlist, outfile: str):
     # Scenario Names
     dark_scen_title_background_color = (81, 81, 83)
     scenario_name_height = 37
-    scenario_name_font = ImageFont.truetype("fonts/Roboto-Regular.ttf", 25)
+    scenario_name_font = ImageFont.truetype(roboto_regular_path, 25)
 
     # Play Count
-    play_count_font = ImageFont.truetype("fonts/Roboto-Bold.ttf", 20)
+    play_count_font = ImageFont.truetype(roboto_bold_path, 20)
     play_count_box_color = (165, 164, 164)
 
     # Find longest text requirement
@@ -52,19 +67,22 @@ def create_image(playlist: Playlist, outfile: str):
         if current_length > longest_scenario_name_requirement:
             longest_scenario_name_requirement = current_length
 
-
-    # add room for playcount
+    # Add room for playcount
     longest_scenario_name_requirement += 200
 
-    dynamic_width = max(playlist_name_length, longest_scenario_name_requirement) + (2 * window_margin)
+    im_width = int(max(
+        playlist_name_length,
+        longest_scenario_name_requirement,
+        205 + sharecode_font.getlength(playlist.share_code)
+    ))
+
+    # add margins
+    im_width += (2 * window_margin)
 
     # Background 
     background_color = (220, 220, 220)
     # im_width = 950
-    MIN_WIDTH = 510
-    im_width = int(max(MIN_WIDTH, dynamic_width))
     im_height = 250 + (scenario_name_height * len(playlist.scenario_list)) - sharecode_shrink
-
 
     im = Image.new("RGB", (im_width, im_height), background_color)
     d = ImageDraw.Draw(im, "RGB")
@@ -177,26 +195,45 @@ def create_image(playlist: Playlist, outfile: str):
             radius=5,
             width=2
         )
-        d.text(
-            (im_width - 100, 199 - sharecode_shrink + i * scenario_name_height),
-            str(scenario.play_count),
-            font=play_count_font,
-            fill="white",
-            stroke_fill=playlist_name_outline_color,
+        if scenario.play_count < 10:
+            d.text(
+                (im_width - 100, 199 - sharecode_shrink + i * scenario_name_height),
+                str(scenario.play_count),
+                font=play_count_font,
+                fill="white",
+                stroke_fill=playlist_name_outline_color,
 
-        )
+            )
+        else:
+            d.text(
+                (im_width - 106, 199 - sharecode_shrink + i * scenario_name_height),
+                str(scenario.play_count),
+                font=play_count_font,
+                fill="white",
+                stroke_fill=playlist_name_outline_color,
+            )
 
 
     im.save(outfile)
 
+# Testing stuff, multiline comment used to stop it from executing
 def test():
     import random
     from scenario import Scenario
     from scenario_generator import generate_random_scenario_name
 
+    global roboto_bold_path
+    global roboto_extra_bold_path
+    global roboto_regular_path
+
+    roboto_bold_path =       "fonts/Roboto-Bold.ttf"
+    roboto_extra_bold_path = "fonts/Roboto-ExtraBold.ttf"
+    roboto_regular_path =    "fonts/Roboto-Regular.ttf"
+
     playlists = (
         Playlist.from_json_file("test_playlists/C - Wednesday - Smooth Tracking (INT) - LG56.json"),
         Playlist.from_json_file("test_playlists/Test Playlist.json"),
+        Playlist.from_json_file("test_playlists/cA Static Benchmark Season-1.json"),
         Playlist(
             "",
             "", 
@@ -214,7 +251,7 @@ def test():
         ),
     )
 
-    playlist = playlists[3]
+    playlist = playlists[2]
     create_image(playlist, "output.png")
 
 def main(): 
@@ -224,5 +261,6 @@ def main():
     create_image(playlist, outfile)
 
 if __name__ == "__main__":
+    # test()
     main()
 
