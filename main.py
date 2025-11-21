@@ -252,12 +252,16 @@ def test():
     )
 
     playlist = playlists[2]
-    create_image(playlist, "output.png")
+    create_image(playlist, ".\\output.png")
 
 def main(): 
+    if len(sys.argv) != 2:
+        return
+
+    exe_dir = sys.argv[0] + "\\..\\"
     playlist_path = sys.argv[1]
     playlist = Playlist.from_json_file(playlist_path)
-    outfile = playlist.playlist_name + ".png"
+    outfile = f"{exe_dir}\\{playlist.playlist_name}.png"
     create_image(playlist, outfile)
 
 if __name__ == "__main__":
