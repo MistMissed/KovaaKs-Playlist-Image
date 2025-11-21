@@ -1,0 +1,67 @@
+{
+	"playlistName": "cA Static Benchmark Season-1",
+	"playlistId": 273304,
+	"authorSteamId": "76561198997667697",
+	"authorName": "Qenobloy",
+	"scenarioList": [
+		{
+			"scenario_name": "cA x-axis flick",
+			"play_Count": 2
+		},
+		{
+			"scenario_name": "cA y-axis flick",
+			"play_Count": 2
+		},
+		{
+			"scenario_name": "cA 2ts wideflick",
+			"play_Count": 2
+		},
+		{
+			"scenario_name": "cA 4ts horizontal",
+			"play_Count": 2
+		},
+		{
+			"scenario_name": "cA micropressure",
+			"play_Count": 2
+		},
+		{
+			"scenario_name": "cA 1ts ruohong",
+			"play_Count": 2
+		},
+		{
+			"scenario_name": "cA fuglaapressure",
+			"play_Count": 2
+		},
+		{
+			"scenario_name": "cA 3ts precise",
+			"play_Count": 2
+		},
+		{
+			"scenario_name": "cA 4ts pokeball",
+			"play_Count": 2
+		},
+		{
+			"scenario_name": "cA 900targets",
+			"play_Count": 2
+		},
+		{
+			"scenario_name": "cA sixshot",
+			"play_Count": 2
+		},
+		{
+			"scenario_name": "cA voxTSs smaller",
+			"play_Count": 2
+		},
+		{
+			"scenario_name": "cA 7ts pressure",
+			"play_Count": 2
+		}
+	],
+	"description": "breaking static clicking into 5 part: Flicking technic, Microadjust, Consciousness, Fluidity, Pace control. \r\ntest yourself, and push ur limit to new hight! glhf!\r\n@cryogenic alchemist",
+	"hasOfflineScenarios": false,
+	"hasEdited": false,
+	"shareCode": "KovaaKsPeekingVermilionEntryfrag",
+	"version": 31,
+	"updated": 1727095697,
+	"isPrivate": false
+}

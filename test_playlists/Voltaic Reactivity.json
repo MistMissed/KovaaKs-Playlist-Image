@@ -1,0 +1,43 @@
+{
+	"playlistName": "Voltaic Reactivity",
+	"playlistId": 19448,
+	"authorSteamId": "76561199169947430",
+	"authorName": "Voltaic",
+	"scenarioList": [
+		{
+			"scenario_name": "VSS GP9",
+			"play_Count": 10
+		},
+		{
+			"scenario_name": "Close Fast Strafes Invincible",
+			"play_Count": 10
+		},
+		{
+			"scenario_name": "Air Voltaic",
+			"play_Count": 3
+		},
+		{
+			"scenario_name": "Ground Plaza Voltaic",
+			"play_Count": 3
+		},
+		{
+			"scenario_name": "Vertical Fast Strafes",
+			"play_Count": 10
+		},
+		{
+			"scenario_name": "Air Angelic 3478",
+			"play_Count": 10
+		},
+		{
+			"scenario_name": "Air UFO Hard Invincible",
+			"play_Count": 5
+		}
+	],
+	"description": "",
+	"hasOfflineScenarios": false,
+	"hasEdited": false,
+	"shareCode": "KovaaKsFeedingExtraCinematic",
+	"version": 31,
+	"updated": 1682026127,
+	"isPrivate": false
+}
