@@ -8,4 +8,3 @@ In-Game Screenshot         | This Program
 ## Usage
 1. Navigate to `C:\Program Files (x86)\Steam\steamapps\common\FPSAimTrainer\FPSAimTrainer\Saved\SaveGames\Playlists`
 2. Drag and drop any playlist .json file onto KovaaKsPlaylistImage.exe
-3. *PlaylistName.png* will be created in the same directory as the json file
